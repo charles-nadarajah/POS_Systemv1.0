@@ -20,8 +20,15 @@ public class CreditPayment extends Payment {
     public String getCreditCardNumber() {
         return creditCardNumber;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+"Payment Method: Credit"+"\b Credit Card #: "+creditCardNumber;
+    }
     
-    
+    public boolean repOk(){
+        return super.repOk() && !(creditCardNumber==null);
+    }
     
     
 }
