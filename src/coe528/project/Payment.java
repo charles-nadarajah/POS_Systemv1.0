@@ -38,10 +38,14 @@ public abstract class Payment {
 
     @Override
     public String toString() {
-        return "Payment{" + "paymentTotal=" + paymentTotal + ", couponNumber=" + couponNumber + '}';
+        String temp="";
+        if(couponNumber!=0) temp="Coupon Number: "+couponNumber;
+        return temp+"\tPayment Total: "+paymentTotal;
     }
     
-    
+    public boolean repOk(){
+        return !(couponNumber<0 || paymentTotal<=0);
+    }
     
     
     
