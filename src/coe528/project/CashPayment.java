@@ -27,8 +27,15 @@ public class CashPayment extends Payment {
     public double getHandingTotal() {
         return handingTotal;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+"\tPayment Method: Cash"+"\tHanded Total: "+handingTotal+"\bBalance: "+balance;
+    }
     
-    
+    public boolean repOk(){
+        return super.repOk() && !(handingTotal<=0 || balance<0);
+    }
     
     
 }
